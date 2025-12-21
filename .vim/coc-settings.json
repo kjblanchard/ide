@@ -1,0 +1,59 @@
+// autocompletion
+{
+    //    "suggest.autoTrigger": "none",
+    //    "suggest.enablePreselect": false,
+    //Makes it so that you are selecting the first autosuggestion.
+    "suggest.noselect": false,
+    //"coc.preferences.jumpCommand": "tabe",
+    // "diagnostic.checkCurrentLine": true
+    //Shows the warning when you are on the line
+    "diagnostic.virtualText": true,
+    "clangd.arguments": [
+        "--inlay-hints=false"
+    ],
+    "inlayHint.enableParameter": false,
+    "inlayHint.refreshOnInsertMode": false,
+    "snippets.userSnippetsDirectory": "/Users/kevin/.vim/coc-snippets",
+    "Lua.diagnostics.globals": [
+        "cGraphics",
+        "cCamera",
+        "cEngine",
+        "cSprite",
+        "cGameObject",
+        "cText",
+        "cScene"
+    ],
+    "languageserver": {
+        "cmake": {
+            "command": "cmake-language-server",
+            "filetypes": [
+                "cmake"
+            ],
+            "rootPatterns": [
+                "build/"
+            ],
+            "initializationOptions": {
+                "buildDirectory": "build"
+            }
+        },
+        "terraform": {
+            "command": "terraform-ls",
+            "args": [
+                "serve"
+            ],
+            "filetypes": [
+                "terraform",
+                "tf"
+            ],
+            "initializationOptions": {},
+            "settings": {}
+        },
+        "python": {
+            "command": "jedi-language-server",
+            "args": [],
+            "filetypes": [
+                "python"
+            ]
+        }
+    }
+}

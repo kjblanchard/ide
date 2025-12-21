@@ -1,0 +1,24 @@
+# Ignore everything by default
+*
+# Ignore macOS Finder junk
+.DS_Store
+**/.DS_Store
+
+# Allow the specific files
+!.gitignore
+!README.md
+!.tmux.conf
+!.vimrc
+!.zprofile
+!.zshrc
+
+# Allow the specific directories and their contents
+!.vim/
+!.vim/**
+
+# Ignore macOS Finder junk
+.DS_Store
+**/.DS_Store
+
+
+
