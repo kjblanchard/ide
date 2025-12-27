@@ -22,6 +22,5 @@
 # Ignore macOS Finder junk
 .DS_Store
 **/.DS_Store
-
-
-
+!backup_kde.sh 
+!restore_kde.sh
