@@ -2,6 +2,17 @@
 
 ## To do it
 
+'''
+$ git clone --bare <git-repo-url> $HOME/.dotfiles
+$ alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+$ dotfiles checkout
+$ dotfiles config --local status.showUntrackedFiles no
+'''
+
+- make an alias in your rc file dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+- [Arch wiki](https://wiki.archlinux.org/title/Dotfiles#Tracking_dotfiles_directly_with_Git)
+
+
 run this command:
 
 - git submodule update --init --recursive
