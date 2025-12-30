@@ -26,6 +26,7 @@
 # Ignore everything by default.
 *
 !.gitmodules
+!README.md
 
 # But not my dumb little setup script.
 !setup.sh
