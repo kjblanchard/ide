@@ -22,8 +22,9 @@ export CLICOLOR=1
 #Enable forward searching in macos, as it interferes with XON/XOFF
 stty -ixon
 #modify the zsh shell prompt
-PS1="%n@%m %1~%F{cyan}%#%f "
-PROMPT="%n@%m %1~%F{cyan}%#%f "
+# PS1="%n@%m %1~%F{cyan}%#%f "
+# PROMPT="%n@%m %1~%F{cyan}%#%f "
+PROMPT="%F{cyan}%n%f%F{yellow}[%~]%f%F{cyan}%% "
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -34,13 +35,12 @@ export CMAKE_GENERATOR=Ninja
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export LUA_PATH="$HOME/.luarocks/share/lua/5.4/?.lua;$HOME/.luarocks/share/lua/5.4/?/init.lua;;"
 export LUA_CPATH="$HOME/.luarocks/lib/lua/5.4/?.so;;"
-export EDITOR='vi'
+export EDITOR='vim'
 bindkey -e
 autoload edit-command-line
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
-PROMPT="%F{cyan}%n%f%F{yellow}[%~]%f%F{cyan}%% "
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=1000
 SAVEHIST=1000
@@ -55,4 +55,13 @@ alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
+alias loff='hyprctl keyword monitor "eDP-1, disable"'
+alias lon='hyprctl keyword monitor "eDP-1, preferred, auto, auto"'
+
+# Auto-start tmux if not already inside tmux
+# if command -v tmux >/dev/null 2>&1; then
+#   if [ -z "$TMUX" ]; then
+#     tmux attach || tmux
+#   fi
+# fi
 

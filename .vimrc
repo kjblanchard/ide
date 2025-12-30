@@ -113,9 +113,9 @@ nnoremap <silent> <leader>d :call CocActionAsync('jumpDeclaration')<CR>
 filetype plugin indent on
 syntax enable
 colorscheme molokai
-let g:airline_theme='minimalist'
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tmuxline#enabled = 0
+" let g:airline_theme='minimalist'
+" let g:airline_powerline_fonts=1
+" let g:airline#extensions#tmuxline#enabled = 0
 
 " ---------- Build / Make ----------
 

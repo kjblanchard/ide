@@ -1,0 +1,10 @@
+[user]
+	email = kevin@supergoon.com
+	name = Kevin Blanchard
+[alias]
+	a = add
+	st = status
+	co = checkout
+	c = commit
+	l = log
+
