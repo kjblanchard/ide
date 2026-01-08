@@ -62,3 +62,4 @@ eval "$(pyenv init -)"
 source <(fzf --zsh)
 alias loff='hyprctl keyword monitor "eDP-1, disable"'
 alias lon='hyprctl keyword monitor "eDP-1, preferred, auto, auto"'
+source "$HOME/git/external/emsdk/emsdk_env.sh"
