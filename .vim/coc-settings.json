@@ -1,19 +1,15 @@
 // autocompletion
 {
-    //    "suggest.autoTrigger": "none",
-    //    "suggest.enablePreselect": false,
-    //Makes it so that you are selecting the first autosuggestion.
+    "signature.enable": true,
+    "suggest.snippetIndicator": "",
     "suggest.noselect": false,
-    //"coc.preferences.jumpCommand": "tabe",
-    // "diagnostic.checkCurrentLine": true
-    //Shows the warning when you are on the line
     "diagnostic.virtualText": true,
     "clangd.arguments": [
-        "--inlay-hints=false"
+        "--inlay-hints=false",
+        "--function-arg-placeholders=0"
     ],
     "inlayHint.enableParameter": false,
     "inlayHint.refreshOnInsertMode": false,
-    "snippets.userSnippetsDirectory": "/Users/kevin/.vim/coc-snippets",
     "Lua.diagnostics.globals": [
         "cGraphics",
         "cCamera",
@@ -22,6 +18,9 @@
         "cGameObject",
         "cText",
         "cScene"
+    ],
+    "Lua.workspace.library": [
+        "~/git/EscapeTheFate/SupergoonEngine/scripting"
     ],
     "languageserver": {
         "cmake": {

@@ -7,6 +7,9 @@ alias spiderman="ssh root@10.0.10.186" #openmediavault
 alias vi="vim" #openmediavault
 alias ldb='lua -e "require(\"mobdebug\").listen()"'
 alias pdb='python -m pdb'
+alias mpp='ncmpcpp'
+alias irc='irssi'
+alias ss='cmatrix'
 export PATH='/home/kevin/.local/bin':/usr/local/bin:$PATH
 #Initialize pyenv for python environments
 #eval "$(pyenv init -)"
@@ -16,7 +19,8 @@ setopt share_history
 setopt hist_ignore_dups
 setopt hist_ignore_space
 #Add in color for ls to see directories easier
-alias ls='ls -G'
+alias ls='ls -G' #mac
+alias ls='ls --color=auto' #linux
 alias airplay='pactl load-module module-raop-discover'
 export CLICOLOR=1
 #Enable forward searching in macos, as it interferes with XON/XOFF
@@ -55,13 +59,6 @@ alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
+source <(fzf --zsh)
 alias loff='hyprctl keyword monitor "eDP-1, disable"'
 alias lon='hyprctl keyword monitor "eDP-1, preferred, auto, auto"'
-
-# Auto-start tmux if not already inside tmux
-# if command -v tmux >/dev/null 2>&1; then
-#   if [ -z "$TMUX" ]; then
-#     tmux attach || tmux
-#   fi
-# fi
-

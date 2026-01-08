@@ -1,35 +1,24 @@
-# # Ignore everything
-# *
-
-# # Allow top-level files
-# !.gitignore
-# !README.md
-# !.tmux.conf
-# !.vimrc
-# !.zprofile
-# !.zshrc
-# !backup_kde.sh
-# !restore_kde.sh
-# !.gitmodules
-
-# # Allow directories
-# !.vim/
-# !.vim/**
-# !.zsh/
-# !.zsh/**
-# !.config/
-# !.config/**
-
-# Could just force-add these files and leave this as '*', but this way I have a
-# nice explicit list for documentation's sake.
-
-# Ignore everything by default.
+# Ignore everything
 *
-!.gitmodules
-!README.md
 
-# But not my dumb little setup script.
-!setup.sh
+# Allow top-level files
+!.gitignore
+!README.md
+!.tmux.conf
+!.vimrc
+!.zprofile
+!.zshrc
+!backup_kde.sh
+!restore_kde.sh
+!.gitmodules
+
+# Allow directories
+!.vim/
+!.vim/**
+!.zsh/
+!.zsh/**
+!.config/
+!.config/**
 
 # Bash stuff (profile just sources bashrc, since it's the only thing sourced
 # when a shell is a login shell).
@@ -174,28 +163,12 @@ etc/clusto*.conf
 .config/systemd/user/gpg-agent.service
 # And don't see swaps as usual (sigh)
 .config/systemd/user/.*.swp
+!.config/hypr
+!.config/hypr/*
+!.config/kitty
+!.config/kitty/*
+!.config/nvim
+!.config/nvim/*
+!.config/waybar
+!.config/waybar/*
 
-# Random arbitrary not-really-a-config file,
-# for use with hexdump
-!.config/hexdump.format
-
-# Invoke customization (eg for nixos run.shell loc)
-!.invoke.yml
-
-# GPG settings (does NOT include keychain etc!)
-!.gnupg
-!.gnupg/*.conf
-
-# Rust!
-!.cargo
-!.cargo/config.toml
-
-# Lazygit
-!.config/lazygit/
-!.config/lazygit/config.yml
-
-# 1Password CLI hooks
-!.config/1Password
-!.config/1Password/*
-!.config/1Password/ssh/
-!.config/1Password/ssh/*

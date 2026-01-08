@@ -9,8 +9,10 @@ scriptencoding utf-8
 set number
 " Don't use the system clipboard in vim
 "set clipboard^=unnamed,unnamedplus
-set mouse=a
-set ttymouse=sgr
+" set mouse=a
+if !has('nvim')
+  set ttymouse=sgr
+endif
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
@@ -104,7 +106,12 @@ nnoremap <leader>k :call CocAction('doHover')<CR>
 nnoremap <leader>f :call CocAction('format')<CR>
 vnoremap <leader>f :call CocAction('format')<CR>
 nnoremap <leader>f :call FormatFallback()<CR>
-vnoremap <leader>f :call FormatFallback()<CR>
+vnoremap <leader>f :call Fo matFallback()<CR>
+nnoremap <leader>p :Files<CR>
+nnoremap <leader>r :Rg<CR>
+nnoremap <leader>t :tabnew<CR>
+nnoremap <leader>' :vsplit<CR>
+nnoremap <leader>5 :split<CR>
 nnoremap <silent> <F12> :call CocActionAsync('jumpDefinition')<CR>
 nnoremap <silent> <leader>d :call CocActionAsync('jumpDeclaration')<CR>
 
@@ -133,7 +140,7 @@ set wildmenu
 set wildignore+=*/node_modules/*,*/.git/*,*/build/*
 set wildignorecase
 "issues with this as it conflicts with scrollingnnoremap <C-p> :find<Space>
-nnoremap <leader>p :find<Space>
+" nnoremap <leader>p :find<Space>
 set wildoptions=pum
 set pumheight=10
 
@@ -142,11 +149,6 @@ imap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ "\<Tab>"
 smap <silent><expr> <TAB> coc#rpc#request('doKeymap', ['snippets-expand-jump',''])
-" Make Vim use a transparent background
-hi Normal guibg=NONE ctermbg=NONE
-hi LineNr guibg=NONE ctermbg=NONE
-hi NonText guibg=NONE ctermbg=NONE
-hi Folded guibg=NONE ctermbg=NONE
 set complete-=i
 set smarttab
 set nrformats-=octal
