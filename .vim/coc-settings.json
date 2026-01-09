@@ -1,15 +1,30 @@
 // autocompletion
 {
-    // "signature.enable": true,
-    // "suggest.snippetIndicator": "",
-    // "suggest.noselect": false,
+    "signature.target": "float",
+    "suggest.enablePreselect": true,
+    "suggest.detailField": "abbr",
+    "suggest.maxCompleteItemCount": 50,
+    "suggest.triggerAfterInsertEnter": true,
+    "diagnostic.enable": true,
+
+    "diagnostic.virtualText": false,
+    "diagnostic.messageTarget": "float",
+
     // "diagnostic.virtualText": true,
-    // "clangd.arguments": [
-    //     "--inlay-hints=false",
-    //     "--function-arg-placeholders=0"
-    // ],
-    // "inlayHint.enableParameter": false,
-    // "inlayHint.refreshOnInsertMode": false,
+    // "diagnostic.messageTarget": "echo",
+    // "diagnostic.virtualTextPrefix": "●",
+    "diagnostic.checkCurrentLine": true,
+    "codeLens.enable": true,
+    "inlayHint.enableParameter": true,
+    "inlayHint.refreshOnInsertMode": true,
+    "hover.target": "float",
+    "signature.enable": true,
+    "suggest.snippetIndicator": "",
+    "suggest.noselect": false,
+    "clangd.arguments": [
+        "--inlay-hints=false",
+        "--function-arg-placeholders=0"
+    ],
     "languageserver": {
         "cmake": {
             "command": "cmake-language-server",

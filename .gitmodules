@@ -58,3 +58,6 @@
 [submodule "/home/kevin/.vim/pack/vendor/start/catppuccin"]
 	path = /home/kevin/.vim/pack/vendor/start/catppuccin
 	url = https://github.com/catppuccin/vim.git
+[submodule "/home/kevin/.vim/pack/plugins/start/lightline"]
+	path = /home/kevin/.vim/pack/plugins/start/lightline
+	url = https://github.com/itchyny/lightline.vim
