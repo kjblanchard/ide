@@ -4,7 +4,7 @@
 alias nucbuntu="ssh kevin@10.0.10.194" #wired
 alias skywalker="ssh root@10.0.10.1" #openwrt
 alias spiderman="ssh root@10.0.10.186" #openmediavault
-alias vi="vim" #openmediavault
+alias vi='vim' #openmediavault
 alias ldb='lua -e "require(\"mobdebug\").listen()"'
 alias pdb='python -m pdb'
 alias mpp='ncmpcpp'
@@ -62,4 +62,3 @@ eval "$(pyenv init -)"
 source <(fzf --zsh)
 alias loff='hyprctl keyword monitor "eDP-1, disable"'
 alias lon='hyprctl keyword monitor "eDP-1, preferred, auto, auto"'
-source "$HOME/git/external/emsdk/emsdk_env.sh"

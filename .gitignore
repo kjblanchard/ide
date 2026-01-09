@@ -79,6 +79,12 @@
 !.vim/*/*/*/*
 !.vim/*/*/*/*/*
 !.vim/*/*/*/*/*/*
+!.config/nvim/*
+!.config/nvim/*/*
+!.config/nvim/*/*/*
+!.config/nvim/*/*/*/*
+!.config/nvim/*/*/*/*/*
+!.config/nvim/*/*/*/*/*/*
 # Do ignore netrw history
 .vim/.netrwhist
 # Do ignore vim-plug stuff, sigh

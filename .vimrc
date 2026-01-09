@@ -30,23 +30,6 @@ endif
 " yml fix
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-"format using COC if we have a formatter, otherwise use the built in
-"formatting for the file.
-function! FormatFallback()
-  if CocAction('hasProvider', 'format')
-    " Use coc.nvim formatter
-    call CocAction('format')
-    echo "COC format"
-  else
-    " Fallback to Vim's built-in formatting for the whole buffer
-    let b:PlugView = winsaveview()
-    normal! gg=G
-    call winrestview(b:PlugView)
-    " Fallback to Vim's built-in formatting for the whole buffer
-    ":let b:PlugView=winsaveview()<CR>gg=G:call winrestview(b:PlugView) <CR>:echo "file indented"<CR>
-    echo "Used Vim fallback formatter"
-  endif
-endfunction
 
 " ---------- Indentation ----------
 set tabstop=4
@@ -75,45 +58,13 @@ let mapleader = "\<Space>"
 noremap <Space> <Nop>
 
 " ---------- Splits ----------
-"  zoom with leader z , otherwise you have to do ctrl-w | and =
-function! s:ZoomToggle() abort
-  if exists('t:zoomed') && t:zoomed
-    execute t:zoom_winrestcmd
-    let t:zoomed = 0
-  else
-    let t:zoom_winrestcmd = winrestcmd()
-    resize
-    vertical resize
-    let t:zoomed = 1
-  endif
-endfunction
-command! ZoomToggle call s:ZoomToggle()
-nnoremap <silent> <Leader>z :ZoomToggle<CR>
-
-" ---------- Plugins ----------
-" --- Coc.nvim and VScode like ide ---
-inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
-nmap <F2> <Plug>(coc-rename)
 nmap <F4> :wall<CR>:bufdo bd<CR>:Ex<CR>
-
 map <F5> :!make debug<CR>
 map <F7> :make build<CR>
-nnoremap <silent> <F8> :call CocActionAsync('jumpReferences')<CR>
-nnoremap <leader>o :CocList outline<CR>
-" map <F12> <Plug>(coc-definition)
-nnoremap <leader>k :call CocAction('doHover')<CR>
-" Format current buffer with leader+f
-nnoremap <leader>f :call CocAction('format')<CR>
-vnoremap <leader>f :call CocAction('format')<CR>
-nnoremap <leader>f :call FormatFallback()<CR>
-vnoremap <leader>f :call Fo matFallback()<CR>
-nnoremap <leader>p :Files<CR>
-nnoremap <leader>r :Rg<CR>
-nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>' :vsplit<CR>
 nnoremap <leader>5 :split<CR>
-nnoremap <silent> <F12> :call CocActionAsync('jumpDefinition')<CR>
-nnoremap <silent> <leader>d :call CocActionAsync('jumpDeclaration')<CR>
+nnoremap <leader>t :tabnew<CR>
+
 
 
 " ---------- Misc ----------
@@ -145,10 +96,6 @@ set wildoptions=pum
 set pumheight=10
 
 " Use <Tab> to jump to next snippet placeholder
-imap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ "\<Tab>"
-smap <silent><expr> <TAB> coc#rpc#request('doKeymap', ['snippets-expand-jump',''])
 set complete-=i
 set smarttab
 set nrformats-=octal
@@ -184,4 +131,42 @@ endif
 
 autocmd BufRead,BufNewFile terraform.tfvars set filetype=terraform-vars syntax=terraform
 
+
+"format using COC if we have a formatter, otherwise use the built in
+"formatting for the file.
+function! FormatFallback()
+  if CocAction('hasProvider', 'format')
+    " Use coc.nvim formatter
+    call CocAction('format')
+    echo "COC format"
+  else
+    " Fallback to Vim's built-in formatting for the whole buffer
+    let b:PlugView = winsaveview()
+    normal! gg=G
+    call winrestview(b:PlugView)
+    " Fallback to Vim's built-in formatting for the whole buffer
+    ":let b:PlugView=winsaveview()<CR>gg=G:call winrestview(b:PlugView) <CR>:echo "file indented"<CR>
+    echo "Used Vim fallback formatter"
+  endif
+endfunction
+
+" ---------- Plugins ----------
+" --- Coc.nvim and VScode like ide ---
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
+nmap <F2> <Plug>(coc-rename)
+nnoremap <silent> <F8> :call CocActionAsync('jumpReferences')<CR>
+nnoremap <leader>o :CocList outline<CR>
+nnoremap <leader>k :call CocAction('doHover')<CR>
+nnoremap <leader>f :call CocAction('format')<CR>
+vnoremap <leader>f :call CocAction('format')<CR>
+nnoremap <leader>f :call FormatFallback()<CR>
+vnoremap <leader>f :call Fo matFallback()<CR>
+nnoremap <leader>p :Files<CR>
+nnoremap <leader>r :Rg<CR>
+nnoremap <silent> <F12> :call CocActionAsync('jumpDefinition')<CR>
+nnoremap <silent> <leader>d :call CocActionAsync('jumpDeclaration')<CR>
+imap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ "\<Tab>"
+smap <silent><expr> <TAB> coc#rpc#request('doKeymap', ['snippets-expand-jump',''])
 

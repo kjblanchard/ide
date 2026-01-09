@@ -1,27 +1,15 @@
 // autocompletion
 {
-    "signature.enable": true,
-    "suggest.snippetIndicator": "",
-    "suggest.noselect": false,
-    "diagnostic.virtualText": true,
-    "clangd.arguments": [
-        "--inlay-hints=false",
-        "--function-arg-placeholders=0"
-    ],
-    "inlayHint.enableParameter": false,
-    "inlayHint.refreshOnInsertMode": false,
-    "Lua.diagnostics.globals": [
-        "cGraphics",
-        "cCamera",
-        "cEngine",
-        "cSprite",
-        "cGameObject",
-        "cText",
-        "cScene"
-    ],
-    "Lua.workspace.library": [
-        "~/git/EscapeTheFate/SupergoonEngine/scripting"
-    ],
+    // "signature.enable": true,
+    // "suggest.snippetIndicator": "",
+    // "suggest.noselect": false,
+    // "diagnostic.virtualText": true,
+    // "clangd.arguments": [
+    //     "--inlay-hints=false",
+    //     "--function-arg-placeholders=0"
+    // ],
+    // "inlayHint.enableParameter": false,
+    // "inlayHint.refreshOnInsertMode": false,
     "languageserver": {
         "cmake": {
             "command": "cmake-language-server",
