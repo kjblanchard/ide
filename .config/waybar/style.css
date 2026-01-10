@@ -5,7 +5,7 @@
  * ----------------------------------------------------- */
 
 * {
-    font-family: "JetBrainsMono Nerd Font", "Font Awesome 7 Free", "Font Awesome 7 Brands", "Material Design Icons", sans-serif;
+    font-family: "Font Awesome 7 Free", "JetBrainsMono Nerd Font",  "Font Awesome 7 Brands", "Material Design Icons", sans-serif;
     font-size: 14px;
     font-weight: 400;
 }
@@ -15,7 +15,7 @@
  * ----------------------------------------------------- */
 
 window#waybar {
-    background: rgba(50, 30, 65, 0.85); /* subtle purple tint + blur-friendly */
+    background: rgba(50, 30, 65, 0.65); /* subtle purple tint + blur-friendly */
     border-bottom: 1px solid rgba(178, 107, 255, 0.35);
     color: #ffffff;
     padding: 5 5px;
@@ -49,10 +49,10 @@ window#waybar.hidden {
 #language,
 #keyboard-state {
     padding: 4px 12px;
-    margin: 0 6px;
+    /* margin: 0 1px; */
 
     /* Soft purple tint */
-    background: rgba(178, 107, 255, 0.08);
+    background: rgba(178, 107, 255, 0.1);
 
     border-radius: 8px;
     color: #eaeaea;
@@ -82,13 +82,13 @@ window#waybar.hidden {
  * MODULE SEPARATORS
  * ----------------------------------------------------- */
 
-.modules-left > widget:not(:first-child),
-.modules-center > widget:not(:first-child), 
-.modules-right > widget:not(:first-child) {
-    border-left: 1px solid rgba(178, 107, 255, 0.15);
-    padding-left: 10px;
-    margin-left: 10px;
-}
+/* .modules-left > widget:not(:first-child), */
+/* .modules-center > widget:not(:first-child), */ 
+/* .modules-right > widget:not(:first-child) { */
+/*     border-left: 1px solid rgba(178, 107, 255, 0.15); */
+/*     padding-left: 10px; */
+/*     margin-left: 10px; */
+/* } */
 
 /* -----------------------------------------------------
  * WORKSPACES
@@ -191,16 +191,3 @@ window#waybar.hidden {
 #tray > .needs-attention {
     background: rgba(255, 60, 60, 0.6);
 }
-
-/* -----------------------------------------------------
- * SCRATCHPAD
- * ----------------------------------------------------- */
-
-#scratchpad {
-    background: rgba(178, 107, 255, 0.06);
-}
-
-#scratchpad.empty {
-    background: transparent;
-}
-

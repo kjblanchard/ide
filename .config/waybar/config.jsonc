@@ -8,6 +8,7 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
+        // "custom/launcher",
         "hyprland/workspaces"
     ],
     "modules-center": [
@@ -15,7 +16,7 @@
     ],
     "modules-right": [
         "mpd",
-        // "idle_inhibitor",
+        "idle_inhibitor",
         "pulseaudio",
         // "network",
         "power-profiles-daemon",
@@ -226,9 +227,8 @@
         "tooltip": false,
         "menu": "on-click",
         "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-
         // hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'
-// hyprshutdown -t 'Restarting...' --post-cmd 'reboot'
+        // hyprshutdown -t 'Restarting...' --post-cmd 'reboot'
         "menu-actions": {
             "shutdown": "hyprshutdown -t 'Shutting Down ..' --post-cmd 'shutdown -P 0'",
             "reboot": "hyprshutdown -t 'Restarting...' --post-cmd 'reboot'",
@@ -242,5 +242,9 @@
         "all-outputs": true,
         "format": "{name}",
         "active-only": false
+    },
+    "custom/launcher": {
+        "format": "",
+        "tooltip": false
     }
 }
